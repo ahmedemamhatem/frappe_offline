@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "creation": "2023-12-10 03:21:34.876285",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctype_log",
+  "column_break_xbebm",
+  "refrance_doctype",
+  "section_break_aysts",
+  "log"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctype_log",
+   "fieldtype": "Link",
+   "label": "DocTyp",
+   "options": "DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xbebm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "refrance_doctype",
+   "fieldtype": "Data",
+   "label": "Refrance DocType",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_aysts",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "log",
+   "fieldtype": "Small Text",
+   "label": "Log",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-10 03:21:50.125500",
+ "modified_by": "Administrator",
+ "module": "Frappe Offline",
+ "name": "Frappe Sync Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

@@ -1,0 +1,119 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-12-10 02:52:20.723725",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enable_sync_section",
+  "enable",
+  "remote_site_info_section",
+  "remote_site_url",
+  "column_break_az7i4",
+  "authentication_method",
+  "frappe_user_name",
+  "frappe_user_password",
+  "frappe_api_key",
+  "frappe_api_secret",
+  "doctype_to_sync_section",
+  "doctype_to_sync"
+ ],
+ "fields": [
+  {
+   "fieldname": "enable_sync_section",
+   "fieldtype": "Section Break",
+   "label": "Enable Sync"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable",
+   "fieldtype": "Check",
+   "label": "Enable"
+  },
+  {
+   "fieldname": "remote_site_info_section",
+   "fieldtype": "Section Break",
+   "label": "Remote Site Info"
+  },
+  {
+   "fieldname": "remote_site_url",
+   "fieldtype": "Data",
+   "label": "Remote Site URL"
+  },
+  {
+   "fieldname": "column_break_az7i4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "authentication_method",
+   "fieldtype": "Select",
+   "label": "Authentication Method",
+   "options": "Frappe User\nUse token based"
+  },
+  {
+   "depends_on": "eval:doc.authentication_method==\"Frappe User\"",
+   "fieldname": "frappe_user_name",
+   "fieldtype": "Data",
+   "label": "Frappe User Name",
+   "mandatory_depends_on": "eval:doc.authentication_method==\"Frappe User\""
+  },
+  {
+   "depends_on": "eval:doc.authentication_method==\"Frappe User\"",
+   "fieldname": "frappe_user_password",
+   "fieldtype": "Data",
+   "label": "Frappe User Password",
+   "mandatory_depends_on": "eval:doc.authentication_method==\"Frappe User\""
+  },
+  {
+   "depends_on": "eval:doc.authentication_method==\"Use token based\"",
+   "fieldname": "frappe_api_key",
+   "fieldtype": "Data",
+   "label": "Frappe Api Key",
+   "mandatory_depends_on": "eval:doc.authentication_method==\"Use token based\""
+  },
+  {
+   "depends_on": "eval:doc.authentication_method==\"Use token based\"",
+   "fieldname": "frappe_api_secret",
+   "fieldtype": "Data",
+   "label": "Frappe Api Secret",
+   "mandatory_depends_on": "eval:doc.authentication_method==\"Use token based\""
+  },
+  {
+   "fieldname": "doctype_to_sync_section",
+   "fieldtype": "Section Break",
+   "label": "Doctype to Sync"
+  },
+  {
+   "fieldname": "doctype_to_sync",
+   "fieldtype": "Table",
+   "label": "Doctype to Sync",
+   "options": "Doctype to Sync"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-12-10 03:03:39.117131",
+ "modified_by": "Administrator",
+ "module": "Frappe Offline",
+ "name": "Frappe Sync",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
