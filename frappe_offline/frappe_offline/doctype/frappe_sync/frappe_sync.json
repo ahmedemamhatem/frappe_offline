@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-12-10 02:52:20.723725",
+ "creation": "2023-12-10 04:59:28.200110",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -37,45 +37,74 @@
    "label": "Remote Site Info"
   },
   {
+   "bold": 1,
    "fieldname": "remote_site_url",
    "fieldtype": "Data",
-   "label": "Remote Site URL"
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Remote Site URL",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_az7i4",
    "fieldtype": "Column Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "authentication_method",
    "fieldtype": "Select",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Authentication Method",
-   "options": "Frappe User\nUse token based"
+   "options": "Frappe User\nUse token based",
+   "reqd": 1
   },
   {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
    "depends_on": "eval:doc.authentication_method==\"Frappe User\"",
    "fieldname": "frappe_user_name",
    "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Frappe User Name",
    "mandatory_depends_on": "eval:doc.authentication_method==\"Frappe User\""
   },
   {
+   "allow_in_quick_entry": 1,
+   "bold": 1,
    "depends_on": "eval:doc.authentication_method==\"Frappe User\"",
    "fieldname": "frappe_user_password",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Frappe User Password",
    "mandatory_depends_on": "eval:doc.authentication_method==\"Frappe User\""
   },
   {
+   "allow_in_quick_entry": 1,
    "depends_on": "eval:doc.authentication_method==\"Use token based\"",
    "fieldname": "frappe_api_key",
    "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Frappe Api Key",
    "mandatory_depends_on": "eval:doc.authentication_method==\"Use token based\""
   },
   {
    "depends_on": "eval:doc.authentication_method==\"Use token based\"",
    "fieldname": "frappe_api_secret",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "label": "Frappe Api Secret",
    "mandatory_depends_on": "eval:doc.authentication_method==\"Use token based\""
   },
@@ -88,13 +117,14 @@
    "fieldname": "doctype_to_sync",
    "fieldtype": "Table",
    "label": "Doctype to Sync",
-   "options": "Doctype to Sync"
+   "options": "Doctype to Sync",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-12-10 03:03:39.117131",
+ "modified": "2023-12-10 05:22:12.406275",
  "modified_by": "Administrator",
  "module": "Frappe Offline",
  "name": "Frappe Sync",
