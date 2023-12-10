@@ -31,7 +31,7 @@ function checkRemoteConnection(frm) {
 
 function checkRemoteDocTypes(frm) {
     frappe.call({
-        method: 'frappe_offline.doctype.frappe_sync.frappe_sync.check_remote_doctypes',
+        method: 'create_remote_custom_fields',
         doc: frm.doc,
         args: {},
         freeze: true,
@@ -44,3 +44,26 @@ function checkRemoteDocTypes(frm) {
         }
     });
 }
+
+frappe.ui.form.on("Frappe Sync", {
+	refresh: function (frm) {
+		frm.set_query("doctype_to_sync", "doctype_to_sync", function () {
+			return {
+				filters: {
+					issingle: 0,
+					istable: 0,
+				},
+			};
+		});
+
+		frm.set_indicator_formatter("status", function (doc) {
+			let indicator = "orange";
+			if (doc.status == "Approved") {
+				indicator = "green";
+			} else if (doc.status == "Rejected") {
+				indicator = "red";
+			}
+			return indicator;
+		});
+	},
+});
