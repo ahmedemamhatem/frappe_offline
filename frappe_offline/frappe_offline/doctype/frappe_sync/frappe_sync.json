@@ -81,7 +81,7 @@
    "bold": 1,
    "depends_on": "eval:doc.authentication_method==\"Frappe User\"",
    "fieldname": "frappe_user_password",
-   "fieldtype": "Password",
+   "fieldtype": "Data",
    "in_global_search": 1,
    "in_list_view": 1,
    "in_preview": 1,
@@ -104,7 +104,7 @@
   {
    "depends_on": "eval:doc.authentication_method==\"Use token based\"",
    "fieldname": "frappe_api_secret",
-   "fieldtype": "Password",
+   "fieldtype": "Data",
    "label": "Frappe Api Secret",
    "mandatory_depends_on": "eval:doc.authentication_method==\"Use token based\""
   },
@@ -124,7 +124,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-12-10 05:22:12.406275",
+ "modified": "2023-12-10 05:50:37.372048",
  "modified_by": "Administrator",
  "module": "Frappe Offline",
  "name": "Frappe Sync",
